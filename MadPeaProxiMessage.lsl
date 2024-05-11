@@ -25,10 +25,6 @@ default
                 alreadySentMessage += currentPlayerKey;
             }
         }
-        if (numberOfAgents > 0) {
-            doorListen();
-        } else {
-            doorStop();}
     }
 
     timer()

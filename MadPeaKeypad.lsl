@@ -4,7 +4,7 @@ list backLinkNumber = [1];
 string beep = "Beep Sound";
 float volume = 0.3;
 
-integer timerGap = 10;  // 10 second restart for testing
+integer timerGap = 30;  
 list attemptedCode = [];
 
 integer codeLength = 3;

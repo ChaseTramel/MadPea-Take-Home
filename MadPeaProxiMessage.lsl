@@ -9,10 +9,11 @@ default
         llSetTimerEvent(timerGap);
     }
 
-    touch_start(integer total_number)
-    {
-        llSay(0, "You touched me.");
-    }
+    // touch_start(integer total_number)
+    // {
+    //     llSay(0, "You touched me.");
+    // }
+
     sensor(integer numberOfAgents) {
         // llSay(0, "Players in range: " + (string)numberOfAgents + ".");
         string currentPlayerKey;
@@ -25,6 +26,7 @@ default
             }
         }
     }
+    
     timer()
     {
         alreadySentMessage = [];

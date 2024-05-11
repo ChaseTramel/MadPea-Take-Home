@@ -7,16 +7,9 @@ key keypadKey = "c017da8e-dc89-b3cb-7b0a-3f9c83913b32";
 
 integer face = 0;
 
-integer rangeMeters = 5;
-
 changeColor() {
     llSay(0, "doing it");
     llSetLinkPrimitiveParamsFast(2, [PRIM_COLOR, ALL_SIDES, blue, 1.0]);   
-}
-
-removeListen()
-{
-    llListenRemove(listenHandler);
 }
 
 default

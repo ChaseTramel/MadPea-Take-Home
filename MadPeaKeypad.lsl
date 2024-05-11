@@ -11,7 +11,7 @@ integer codeLength = 3;
 list doorCode = [4, 6, 11];
 
 key doorKey = "2e55995b-3687-2c2d-a2ec-914dbaeaaf74";
-key hudKey = "e61d64c8-36cf-2fe2-402f-cfdc51993df9";
+key hudKey = "64680b0e-2691-5540-2295-3b644687fe83";
 integer commandChannel = -150; 
 
 float secSleep = 0.5;

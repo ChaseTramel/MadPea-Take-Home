@@ -1,7 +1,6 @@
-integer rangeMeters = 5;
+integer rangeMeters = 1;  // Range in meters, 1 for testing
 list alreadySentMessage;
-float timerGap = 60.0;  // Timer for re-sending proximity message
-
+float timerGap = 10.0;  // Timer for re-sending proximity message, 10 for testing
 default
 {
     state_entry()

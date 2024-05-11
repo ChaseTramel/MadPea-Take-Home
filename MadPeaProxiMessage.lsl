@@ -5,15 +5,6 @@ float timerGap = 30.0;
 key doorKey = "2e55995b-3687-2c2d-a2ec-914dbaeaaf74";
 integer doorChannel = -150; 
 
-doorListen() {
-    llRegionSayTo(doorKey, doorChannel, "listen");
-}
-
-doorStop()
-{
-    llRegionSayTo(doorKey, doorChannel, "stop");
-}
-
 default
 {
     state_entry()

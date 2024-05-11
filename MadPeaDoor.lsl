@@ -32,8 +32,6 @@ default
         llSetLinkPrimitiveParamsFast(LINK_THIS,
     [PRIM_PHYSICS_SHAPE_TYPE, PRIM_PHYSICS_SHAPE_CONVEX]);
     llSetKeyframedMotion([],[]);
-        initalPos = llGetPos();
-        targetPos = initalPos - <moveDistance, 0, 0>;
         llSensorRepeat("", "", AGENT, rangeMeters * PI, PI, 1);
     }
 
@@ -41,7 +39,6 @@ default
     {
         if (message == "unlock") 
         {
-            llSay(0, "unlocked");
             moveDoor();
         }
     }

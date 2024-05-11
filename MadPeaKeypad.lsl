@@ -30,7 +30,6 @@ default
 {
     state_entry()
     {
-        llSetTimerEvent(timerGap);
     }
 
     touch(integer numberOfTouchers)

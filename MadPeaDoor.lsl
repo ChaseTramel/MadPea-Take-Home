@@ -9,6 +9,8 @@ integer rangeMeters = 5;
 vector initalPos;
 vector targetPos;
 float moveDistance = 3.08;
+float moveTime = 5.0;
+float waitTime = 6.0;
 
 removeListen()
 {
@@ -18,16 +20,20 @@ removeListen()
 moveDoor()
 {
     llTriggerSound(sound, 0.3);
-    llSetPos(targetPos);
-    llSetTimerEvent(6);
-    llTriggerSound(sound, 0.3);
-    llSetPos(initalPos);
+    llSetKeyframedMotion(
+        [<(moveDistance * -1), 0.0, 0.0>, ZERO_ROTATION, moveTime,
+            <0.0, 0.0, 0.0>`, ZERO_ROTATION, waitTime, 
+            <moveDistance, 0.0, 0.0>, ZERO_ROTATION, moveTime],
+        [KFM_MODE, KFM_FORWARD]);
 }
 
 default
 {
     state_entry()
     {
+        llSetLinkPrimitiveParamsFast(LINK_THIS,
+    [PRIM_PHYSICS_SHAPE_TYPE, PRIM_PHYSICS_SHAPE_CONVEX]);
+    llSetKeyframedMotion([],[]);
         initalPos = llGetPos();
         targetPos = initalPos - <moveDistance, 0, 0>;
         llSensorRepeat("", "", AGENT, rangeMeters * PI, PI, 1);

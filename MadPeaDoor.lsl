@@ -2,20 +2,34 @@ string sound  = "Slide Door Sound";
 
 integer listenHandler;
 integer keypadChannel = -150; 
-key keypadKey = "2318cfc2-57f0-c859-09e0-61db469b4799";
+key keypadKey = "c017da8e-dc89-b3cb-7b0a-3f9c83913b32";
 
 integer rangeMeters = 5;
+
+vector initalPos;
+vector targetPos;
+float moveDistance = 3.08;
 
 removeListen()
 {
     llListenRemove(listenHandler);
 }
 
+moveDoor()
+{
+    llTriggerSound(sound, 0.3);
+    llSetPos(targetPos);
+    llSetTimerEvent(6);
+    llTriggerSound(sound, 0.3);
+    llSetPos(initalPos);
+}
+
 default
 {
     state_entry()
     {
-        listenHandler = llListen(keypadChannel, "", keypadKey, "");
+        initalPos = llGetPos();
+        targetPos = initalPos - <moveDistance, 0, 0>;
         llSensorRepeat("", "", AGENT, rangeMeters * PI, PI, 1);
     }
 
@@ -24,6 +38,7 @@ default
         if (message == "unlock") 
         {
             llSay(0, "unlocked");
+            moveDoor();
         }
     }
     sensor(integer numberOfAgents) {
@@ -33,6 +48,9 @@ default
         {
             removeListen();
         }
-        
+    }
+    touch_start(integer numberOfTouchers)
+    {
+        moveDoor();
     }
 }

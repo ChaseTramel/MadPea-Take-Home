@@ -27,6 +27,6 @@
   - [x] Send the player a message "The keypad has timed out"
 - [x] Communicate with the door that it has been unlocked
   - [x] Remove listen handler when no players are close
-- [ ] Move door smoothly on the x axis, wait six seconds, then move door back smoothly
+- [x] Move door smoothly on the x axis, wait six seconds, then move door back smoothly
 - [x] Door makes door sound when first moving
 - [ ] Button on HUD turns from red to blue

@@ -2,7 +2,6 @@ list keyLinkNumber = [4, 3, 2, 5, 6, 7, 10, 9, 8, 11];
 list backLinkNumber = [1];
 
 string beep = "Beep Sound";
-string door = "Slide Door Sound";
 float volume = 0.3;
 
 integer timerGap = 30;
@@ -15,6 +14,9 @@ resetAttempts(key toucher)
 {
     attemptedCode = [];
     llInstantMessage(toucher, "Code reset. Please try again.");
+}
+doorUnlock() {
+    
 }
 
 
@@ -39,6 +41,11 @@ default
             llPlaySound(beep, volume);
             attemptedCode += [touchedItem];
             llInstantMessage(toucher, string(attemptedCode));
+        }
+        if (attemptedCode == doorCode)
+        {
+            llInstantMessage(toucher, "Door unlocked!");
+            llSetTimerEvent(0);
         }
         
     }

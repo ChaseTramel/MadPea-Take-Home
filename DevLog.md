@@ -22,7 +22,7 @@
 - [x] Keys make beeps sound when pressed
 - [x] Reset code when you reach four key presses
 - [ ] Remember individual code attempts
-- [ ] Detect 150 (link 4, 6, 11) in order with no numbers in between.
+- [x] Detect 150 (link 4, 6, 11) in order with no numbers in between.
 - [ ] Start a 30 second timer when the play first touches the keypad. If the 30 second run out:
   - [ ] Send the player a message "The keypad has timed out"
 - [ ] Move door smoothly on the x axis, wait six seconds, then move door back smoothly

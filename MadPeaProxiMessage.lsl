@@ -1,6 +1,19 @@
 integer rangeMeters = 5; 
 list alreadySentMessage;
 float timerGap = 30.0;  
+
+key doorKey = "2e55995b-3687-2c2d-a2ec-914dbaeaaf74";
+integer doorChannel = -150; 
+
+doorListen() {
+    llRegionSayTo(doorKey, doorChannel, "listen");
+}
+
+doorStop()
+{
+    llRegionSayTo(doorKey, doorChannel, "stop");
+}
+
 default
 {
     state_entry()
@@ -8,11 +21,6 @@ default
         llSensorRepeat("", "", AGENT, rangeMeters * PI, PI, 1);
         llSetTimerEvent(timerGap);
     }
-
-    // touch_start(integer total_number)
-    // {
-    //     llSay(0, "You touched me.");
-    // }
 
     sensor(integer numberOfAgents) {
         // llSay(0, "Players in range: " + (string)numberOfAgents + ".");
@@ -26,6 +34,10 @@ default
                 alreadySentMessage += currentPlayerKey;
             }
         }
+        if (numberOfAgents > 0) {
+            doorListen();
+        } else {
+            doorStop();}
     }
 
     timer()

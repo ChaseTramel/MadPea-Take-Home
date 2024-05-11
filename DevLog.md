@@ -25,6 +25,7 @@
 - [x] Detect 150 (link 4, 6, 11) in order with no numbers in between.
 - [x] Start a 30 second timer when the play first touches the keypad. If the 30 second run out:
   - [x] Send the player a message "The keypad has timed out"
+- [x] Communicate with the door that it has been unlocked
 - [ ] Move door smoothly on the x axis, wait six seconds, then move door back smoothly
 - [ ] Door makes door sound when first moving
 - [ ] Button on HUD turns from red to blue

@@ -1,7 +1,8 @@
 list keyLinkNumber = [4, 3, 2, 5, 6, 7, 10, 9, 8, 11];
 list backLinkNumber = [1];
-// string beep = "Beep Sound"
-// string door = "Slide Door Sound"
+string beep = "Beep Sound";
+string door = "Slide Door Sound";
+float volume = 0.3;
 
 default
 {
@@ -15,6 +16,7 @@ default
         if(llListFindList(keyLinkNumber, [touchedItem]) !=  -1) 
         {
             llSay(0, "You touched a key");
+            llPlaySound(beep, volume);
         }
     }
 }

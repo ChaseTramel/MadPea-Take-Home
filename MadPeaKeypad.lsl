@@ -10,13 +10,16 @@ list attemptedCode = [];
 integer codeLength = 3;
 list doorCode = [4, 6, 11];
 
+key doorKey = "2e55995b-3687-2c2d-a2ec-914dbaeaaf74"
+integer doorChannel = -150; 
+
 resetAttempts(key toucher)
 {
     attemptedCode = [];
     llInstantMessage(toucher, "Code reset. Please try again.");
 }
 doorUnlock() {
-
+    llRegionSayTo(doorKey, doorChannel, "unlock");
 }
 
 

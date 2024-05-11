@@ -4,7 +4,7 @@ list backLinkNumber = [1];
 string beep = "Beep Sound";
 float volume = 0.3;
 
-integer timerGap = 30;
+integer timerGap = 10;  // 10 second restart for testing
 list attemptedCode = [];
 
 integer codeLength = 3;
@@ -16,8 +16,10 @@ resetAttempts(key toucher)
     llInstantMessage(toucher, "Code reset. Please try again.");
 }
 doorUnlock() {
-    
+
 }
+
+
 
 
 default
@@ -29,7 +31,7 @@ default
 
     touch(integer numberOfTouchers)
     { 
-        
+        llSetTimerEvent(timerGap);
         key toucher = llDetectedKey(0);
         integer touchedItem = llDetectedLinkNumber(0);
         if (llGetListLength(attemptedCode) == codeLength)
@@ -47,6 +49,10 @@ default
             llInstantMessage(toucher, "Door unlocked!");
             llSetTimerEvent(0);
         }
-        
+    }
+    timer()
+    {
+        llSay(0, "Keypad has timed out. Please try again.");
+        attemptedCode = [];
     }
 }

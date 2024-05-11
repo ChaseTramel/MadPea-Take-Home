@@ -44,7 +44,7 @@ default
             attemptedCode += [touchedItem];
             llInstantMessage(toucher, string(attemptedCode));
         }
-        if (attemptedCode == doorCode)
+        if (llGetListLength(attemptedCode) == codeLength && llListFindList(attemptedCode, doorCode) != -1)
         {
             llInstantMessage(toucher, "Door unlocked!");
             llSetTimerEvent(0);
@@ -52,7 +52,11 @@ default
     }
     timer()
     {
-        llSay(0, "Keypad has timed out. Please try again.");
-        attemptedCode = [];
+        if (llGetListLength(attemptedCode) > 0)
+        {
+            llSay(0, "Keypad has timed out. Please try again.");
+            attemptedCode = [];
+        }
+
     }
 }

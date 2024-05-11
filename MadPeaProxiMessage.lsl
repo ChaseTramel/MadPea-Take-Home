@@ -18,7 +18,8 @@ default
         // llSay(0, "Players in range: " + (string)numberOfAgents + ".");
         string currentPlayerKey;
         integer i;
-        for (i = 0; i < numberOfAgents; i++) {  // For each player in range
+        for (i = 0; i < numberOfAgents; i++) 
+        {  // For each player in range
             currentPlayerKey = llDetectedKey(i);
             if (llListFindList(alreadySentMessage, [currentPlayerKey]) == -1) {
                 llInstantMessage(currentPlayerKey, "Type in key");
@@ -26,7 +27,7 @@ default
             }
         }
     }
-    
+
     timer()
     {
         alreadySentMessage = [];

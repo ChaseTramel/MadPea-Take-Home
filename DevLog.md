@@ -18,7 +18,7 @@
 - [x] Detect when player is within 5 meters
 - [x] Send player message "Type in key" when first entering 5 meters
 - [x] Don't send a player a message again unless it's 30 second later
-- [ ] Detect when player first touches the keypad, any key
+- [x] Detect when player first touches the keypad, any key
 - [ ] Keys make beeps sound when pressed
 - [ ] Start a 30 second timer when the play first touches the keypad
 - [ ] Detect 150 (link 4, 6, 11) in order with no numbers in between

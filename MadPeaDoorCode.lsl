@@ -1,10 +1,13 @@
 integer rangeMeters = 5;
+list alreadySentMessage;
+float timerGap = 60.0;  // Timer for re-sending proximity message
 
 default
 {
     state_entry()
     {
         llSensorRepeat("", "", AGENT, rangeMeters * PI, PI, 1);
+        llSetTimerEvent(timerGap);
     }
 
     touch_start(integer total_number)
@@ -12,12 +15,19 @@ default
         llSay(0, "You touched me.");
     }
     sensor(integer numberOfAgents) {
-        llSay(0, "Players in range: " + (string)numberOfAgents + ".");
+        // llSay(0, "Players in range: " + (string)numberOfAgents + ".");
         string currentPlayerKey;
         integer i;
-        for (i = 0; i < numberOfAgents; i++) {
+        for (i = 0; i < numberOfAgents; i++) {  // For each player in range
             currentPlayerKey = llDetectedKey(i);
-            llInstantMessage(currentPlayerKey, "Type in key");
+            if (llListFindList(alreadySentMessage, [currentPlayerKey]) == -1) {
+                llInstantMessage(currentPlayerKey, "Type in key");
+                alreadySentMessage += currentPlayerKey;
+            }
         }
+    }
+    timer()
+    {
+        alreadySentMessage = [];
     }
 }

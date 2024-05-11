@@ -11,7 +11,11 @@ integer codeLength = 3;
 list doorCode = [4, 6, 11];
 
 key doorKey = "2e55995b-3687-2c2d-a2ec-914dbaeaaf74";
-integer doorChannel = -150; 
+key hudKey = "e61d64c8-36cf-2fe2-402f-cfdc51993df9";
+integer commandChannel = -150; 
+
+float secSleep = 0.5;
+
 
 resetAttempts(key toucher)
 {
@@ -20,7 +24,9 @@ resetAttempts(key toucher)
 }
 
 doorUnlock() {
-    llRegionSayTo(doorKey, doorChannel, "unlock");
+    llRegionSayTo(doorKey, commandChannel, "unlock");
+    llSleep(secSleep);
+    llRegionSayTo(hudKey, commandChannel, "change");
 }
 
 

@@ -1,3 +1,6 @@
+// This script goes into the door
+
+
 string sound  = "Slide Door Sound";
 
 integer listenHandler;

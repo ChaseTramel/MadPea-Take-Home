@@ -1,3 +1,6 @@
+// This script can go into any of the objects, but I put it in the keypad
+
+
 integer rangeMeters = 5; 
 list alreadySentMessage;
 float timerGap = 30.0;  

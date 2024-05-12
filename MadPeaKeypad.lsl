@@ -1,3 +1,6 @@
+// This script goes into the keypad
+
+
 list keyLinkNumber = [4, 3, 2, 5, 6, 7, 10, 9, 8, 11];
 list backLinkNumber = [1];
 

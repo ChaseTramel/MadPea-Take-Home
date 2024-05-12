@@ -1,3 +1,6 @@
+// This script goes into the HUD object
+
+
 vector blue = <0, 0, 255>;
 vector red = <255, 0, 0>;
 

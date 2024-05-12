@@ -33,7 +33,7 @@
     - Triggered: Door makes door sound while moving
     - Triggered: Button on HUD turns blue
 
-## Tasks
+## Task List
 
 - [x] Detect when player is within 5 meters
 - [x] Send player message "Type in key" when first entering 5 meters
@@ -41,7 +41,6 @@
 - [x] Detect when player first touches the keypad, any key
 - [x] Keys make beeps sound when pressed
 - [x] Reset code when you reach four key presses
-- [?] Remember individual code attempts
 - [x] Detect 150 (link 4, 6, 11) in order with no numbers in between.
 - [x] Start a 30 second timer when the play first touches the keypad. If the 30 second run out:
   - [x] Send the player a message "The keypad has timed out"
@@ -50,3 +49,9 @@
 - [x] Move door smoothly on the x axis, wait six seconds, then move door back smoothly
 - [x] Door makes door sound when first moving
 - [x] Button on HUD turns from red to blue
+
+## Potential Features
+
+- Remember attempts by player
+- Prevent spamming imputs
+- Lock down the keypad after a certain amount of attempts

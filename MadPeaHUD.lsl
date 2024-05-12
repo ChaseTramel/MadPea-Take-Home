@@ -3,7 +3,7 @@ vector red = <255, 0, 0>;
 
 integer listenHandler;
 integer commandChannel = -150; 
-key keypadKey = "c017da8e-dc89-b3cb-7b0a-3f9c83913b32";
+key keypadKey = "b57fe2eb-8474-acf1-8b3b-122ecd2d323c";
 
 integer face = 0;
 

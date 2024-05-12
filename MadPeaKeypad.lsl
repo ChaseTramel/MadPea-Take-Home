@@ -10,8 +10,8 @@ list attemptedCode = [];
 integer codeLength = 3;
 list doorCode = [4, 6, 11];
 
-key doorKey = "2e55995b-3687-2c2d-a2ec-914dbaeaaf74";
-key hudKey = "64680b0e-2691-5540-2295-3b644687fe83";
+key doorKey = "fd569079-bbc8-5eae-55b3-121aeebebd4a";
+key hudKey = "4a0f014f-4548-f11a-e1f2-fd2b587b2562";
 integer commandChannel = -150; 
 
 float secSleep = 0.5;
@@ -38,7 +38,7 @@ default
     {
     }
 
-    touch(integer numberOfTouchers)
+    touch_start( integer numOfTouchers)
     { 
         llSetTimerEvent(timerGap);
         key toucher = llDetectedKey(0);
@@ -51,7 +51,7 @@ default
         {
             llPlaySound(beep, volume);
             attemptedCode += [touchedItem];
-            llInstantMessage(toucher, string(attemptedCode));
+            llSay(0,"Beep");
         }
         if (llGetListLength(attemptedCode) == codeLength && llListFindList(attemptedCode, doorCode) != -1)
         {

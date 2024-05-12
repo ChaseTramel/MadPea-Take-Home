@@ -1,5 +1,7 @@
 # MadPea Take Home
 
+![](https://github.com/ChaseTramel/MadPea-Take-Home/blob/main/DoorOpening.gif?raw=true)
+
 ## Original Text of Requirements
 
 ### Items Provided:

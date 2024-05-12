@@ -1,6 +1,24 @@
 # MadPea Take Home
 
-## Requirements
+## Original Text of Requirements
+
+### Items Provided:
+
+- Sliding Door 
+- Door Frame
+- Keypad
+- Sounds
+- HUD
+
+### Description:
+
+- When the player walks close (5m) to the door they receive the message: "Type in key".
+- When the player types in the correct combination (150) on the keypad  the sliding door opens smoothly and closes again after 6 seconds.
+- Keys play the beep sound when pressed.
+- Door plays the door sound when moving.
+- After the door opened the red element on the attached HUD turns blue. 
+
+## My Interpretation of the Requirements
 
 - Player is within 5m
 
